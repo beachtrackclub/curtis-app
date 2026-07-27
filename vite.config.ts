@@ -18,10 +18,11 @@ const sha =
   })();
 
 // Cloudflare Pages serves at the domain root (base "/"); it sets CF_PAGES=1 in
-// its build env. GitHub Pages serves under /curtis-app/. This picks the right
-// base automatically for each.
+// its build env. GitHub Pages serves under /curtis-app/. The Capacitor native
+// build (CAPACITOR=1) serves from the app bundle root, so it also needs "/".
+// This picks the right base automatically for each.
 export default defineConfig({
-  base: process.env.CF_PAGES ? "/" : "/curtis-app/",
+  base: process.env.CF_PAGES || process.env.CAPACITOR ? "/" : "/curtis-app/",
   plugins: [react()],
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
