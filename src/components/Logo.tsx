@@ -20,7 +20,7 @@ export function Logo({ size = 28, className }: { size?: number; className?: stri
         strokeLinecap="butt"
         strokeLinejoin="miter"
       />
-      <line x1="16" y1="74" x2="46" y2="48" stroke="currentColor" strokeWidth="15" strokeLinecap="butt" />
+      <line x1="16" y1="76" x2="46" y2="48" stroke="currentColor" strokeWidth="15" strokeLinecap="butt" />
     </svg>
   );
 }
