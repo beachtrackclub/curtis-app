@@ -1,5 +1,6 @@
 /**
- * Beach Performance / Trackside mark — a double-chevron "fast-forward" motion mark.
+ * Beach Performance / Trackside mark — a double-chevron "fast-forward" motion
+ * mark whose two lower strokes (the "legs") run exactly parallel (both 45°).
  * Uses currentColor so it can be tinted gold, white, or black by its parent.
  */
 export function Logo({ size = 28, className }: { size?: number; className?: string }) {
@@ -13,14 +14,10 @@ export function Logo({ size = 28, className }: { size?: number; className?: stri
       className={className}
       aria-hidden="true"
     >
-      <polyline
-        points="44,18 78,50 44,82"
-        stroke="currentColor"
-        strokeWidth="15"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-      />
-      <line x1="16" y1="76" x2="46" y2="48" stroke="currentColor" strokeWidth="15" strokeLinecap="butt" />
+      <g stroke="currentColor" strokeWidth="12" strokeLinejoin="miter" strokeLinecap="butt">
+        <polyline points="46,24 72,50 46,76" fill="none" />
+        <line x1="40" y1="44" x2="14" y2="70" />
+      </g>
     </svg>
   );
 }
